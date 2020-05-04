@@ -38,7 +38,7 @@ describe 'simple_answer_checker' do
     it 'does not found the expected translation' do
       challenge = {terms: ["you"], language: :portugues}
       expect(answer_checker.check(challenge, "ele")).to be_falsy
-    end    
+    end
 
   end
 
