@@ -1,4 +1,5 @@
 require_relative('../../simple_challenge_picker')
+require_relative('../../default_random_language_service')
 
 module Challenges
   module PtEn

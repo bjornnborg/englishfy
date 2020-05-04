@@ -16,9 +16,10 @@ class SimpleChallengePicker
 
   def pick(quantity=1)
     chosen_language = @random_service.random_language
-    lookup_map = chosen_language == @lang_to ? @answers_to : @answers_from
+    lookup_map = chosen_language == @lang_to ? @answers_from : @answers_to
 
     terms = lookup_map.keys.sample(quantity)
+
     challenge = {
       language: chosen_language,
       terms: terms,
