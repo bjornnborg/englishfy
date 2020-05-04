@@ -14,7 +14,7 @@ describe 'pt_en pronouns' do
         language_pronouns = pronouns.language_values[language]
 
         challenge[:terms].each do |term|
-          expect(language_pronouns.include?(term)).to be_truthy
+          expect(language_pronouns.values.flatten.include?(term)).to be_truthy
         end
 
       end
