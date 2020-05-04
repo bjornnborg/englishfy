@@ -1,5 +1,6 @@
 require('./lib/challenges/pt_en/pronouns')
 require('./lib/challenges/pt_en/colors')
+require('./lib/challenges/pt_en/animals')
 require_relative 'simple_answer_checker'
 require_relative 'randomizer'
 
@@ -16,8 +17,9 @@ game = {
 
 pronouns = Challenges::PtEn::Pronouns.new
 colors = Challenges::PtEn::Colors.new
+animals = Challenges::PtEn::Animals.new
 
-challengers = [pronouns.build, colors.build]
+challengers = [pronouns.build, colors.build, animals.build]
 
 randomizer = Randomizer.new(challengers)
 
