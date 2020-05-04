@@ -1,5 +1,7 @@
 require('./lib/challenges/pt_en/pronouns')
+require('./lib/challenges/pt_en/colors')
 require_relative 'simple_answer_checker'
+require_relative 'randomizer'
 
 puts "Hi!!! Welcome to the english game"
 puts "What's your name?"
@@ -13,14 +15,17 @@ game = {
 }
 
 pronouns = Challenges::PtEn::Pronouns.new
+colors = Challenges::PtEn::Colors.new
 
-challengers = [pronouns.build]
+challengers = [pronouns.build, colors.build]
+
+randomizer = Randomizer.new(challengers)
 
 puts "Nice to meet you, #{name}. Let's play!!!"
 value = ""
 
 while value != "no" do
-  challenger = challengers[0]
+  challenger = randomizer.get
 
   challenge = challenger.pick
   puts ">>>>> #{challenge[:question]}"
