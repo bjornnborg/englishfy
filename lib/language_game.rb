@@ -2,6 +2,7 @@ require('./lib/challenges/pt_en/pronouns')
 require('./lib/challenges/pt_en/colors')
 require('./lib/challenges/pt_en/animals')
 require('./lib/challenges/pt_en/verbs')
+require('./lib/challenges/pt_en/nouns')
 require_relative 'simple_answer_checker'
 require_relative 'randomizer'
 
@@ -20,8 +21,9 @@ pronouns = Challenges::PtEn::Pronouns.new
 colors = Challenges::PtEn::Colors.new
 animals = Challenges::PtEn::Animals.new
 verbs = animals = Challenges::PtEn::Verbs.new
+nouns = animals = Challenges::PtEn::Nouns.new
 
-challengers = [pronouns.build, colors.build, animals.build, verbs.build]
+challengers = [pronouns.build, colors.build, animals.build, verbs.build, nouns.build]
 
 randomizer = Randomizer.new(challengers)
 
