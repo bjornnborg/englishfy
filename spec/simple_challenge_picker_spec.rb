@@ -66,7 +66,19 @@ describe 'simple_challenge_picker' do
       challenge = challenge_picker.pick(3)
       joined_terms = challenge[:terms].map(&:upcase).join(',')
       expect(challenge[:question].include?(joined_terms)).to be_truthy
-    end    
-  end  
+    end
+  end
+
+  context 'check answers' do
+    it 'checks valid answer' do
+      challenge = {terms: ["you"], language: portuguese}
+      expect(challenge_picker.check(challenge, "você")).to be_truthy
+    end
+
+    it 'checks invalid answer' do
+      challenge = {terms: ["you"], language: portuguese}
+      expect(challenge_picker.check(challenge, "ela")).to be_falsy
+    end
+  end
 
 end

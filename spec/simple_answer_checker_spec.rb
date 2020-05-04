@@ -18,12 +18,12 @@ describe 'simple_answer_checker' do
   context 'from -> to translations' do
 
     it 'founds the expected translation' do
-      challenge = {term: ["você"], language: :english}
+      challenge = {terms: ["você"], language: :english}
       expect(answer_checker.check(challenge, "you")).to be_truthy
     end
 
     it 'does not found the expected translation' do
-      challenge = {term: ["você"], language: :english}
+      challenge = {terms: ["você"], language: :english}
       expect(answer_checker.check(challenge, "she")).to be_falsy
     end
 
@@ -31,14 +31,14 @@ describe 'simple_answer_checker' do
 
   context 'to -> from translation' do
     it 'founds the expected translation' do
-      challenge = {term: ["you"], language: :portugues}
+      challenge = {terms: ["you"], language: :portugues}
       expect(answer_checker.check(challenge, "você")).to be_truthy
     end
 
     it 'does not found the expected translation' do
-      challenge = {term: ["you"], language: :portugues}
+      challenge = {terms: ["you"], language: :portugues}
       expect(answer_checker.check(challenge, "ele")).to be_falsy
-    end    
+    end
 
   end
 

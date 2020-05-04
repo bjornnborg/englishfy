@@ -1,3 +1,4 @@
+require_relative 'simple_answer_checker'
 class SimpleChallengePicker
 
   def initialize(language_from_to, answers_from_to, random_service)
@@ -9,6 +10,8 @@ class SimpleChallengePicker
 
     @answers_from = answers_from_to.first
     @answers_to = answers_from_to.last
+
+    @simple_answer_checker = SimpleAnswerChecker.new(language_from_to, answers_from_to)
   end
 
   def pick(quantity=1)
@@ -26,6 +29,10 @@ class SimpleChallengePicker
     }
 
     challenge
+  end
+
+  def check(challenge, answer)
+    @simple_answer_checker.check(challenge, answer)
   end
 
 end
