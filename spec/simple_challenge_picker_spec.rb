@@ -74,6 +74,11 @@ describe 'simple_challenge_picker' do
       challenge = {terms: ["you"], language: portuguese}
       expect(challenge_picker.check(challenge, "você")).to be_truthy
     end
+
+    it 'checks invalid answer' do
+      challenge = {terms: ["you"], language: portuguese}
+      expect(challenge_picker.check(challenge, "ela")).to be_falsy
+    end
   end
 
 end
