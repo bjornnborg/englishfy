@@ -2,7 +2,7 @@
 # englishfy
 Simple REPL to teach english to my son
 
-##instalation
+## instalation
 
 Run:
 `bundle install` in the first time
