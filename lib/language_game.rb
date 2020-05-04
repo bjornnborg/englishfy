@@ -14,24 +14,18 @@ game = {
 
 pronouns = Challenges::PtEn::Pronouns.new
 
-challengers = [
-  {
-    challenger: pronouns.build,
-    checker: SimpleAnswerChecker.new([:portuguese, :english], [pronouns.language_values[:portuguese], pronouns.language_values[:english]])
-  }
-]
+challengers = [pronouns.build]
 
 puts "Nice to meet you, #{name}. Let's play!!!"
 value = ""
 
 while value != "no" do
-  challenger = challengers.first[:challenger]
-  checker = challengers.first[:checker]
+  challenger = challengers[0]
 
   challenge = challenger.pick
   puts ">>>>> #{challenge[:question]}"
   answer = gets.chomp
-  check = checker.check(challenge, answer)
+  check = challenger.check(challenge, answer)
 
   if check
     puts "Your answer was correct!!!"
