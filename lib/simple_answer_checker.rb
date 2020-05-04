@@ -9,10 +9,13 @@ class SimpleAnswerChecker
   end
 
   def check(challenge, answer)
+    puts ">>>> o desafio foi #{challenge}"
     lookup_map = challenge[:language] == @lang_to ? @answers_to : @answers_from
 
+    puts ">>>> lookup #{lookup_map}"
+
     possible_answers = lookup_map[answer]
-    valid = possible_answers && possible_answers.include?(challenge[:term].first.downcase)  #simple checker supports only one term
+    valid = possible_answers && possible_answers.include?(challenge[:terms].first.downcase)  #simple checker supports only one term
 
     valid
   end
