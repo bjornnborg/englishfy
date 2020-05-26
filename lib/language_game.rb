@@ -3,6 +3,7 @@ require('./lib/challenges/pt_en/colors')
 require('./lib/challenges/pt_en/animals')
 require('./lib/challenges/pt_en/verbs')
 require('./lib/challenges/pt_en/nouns')
+require('./lib/ext/color_string')
 require_relative 'simple_answer_checker'
 require_relative 'randomizer'
 
@@ -39,10 +40,10 @@ while value != "no" do
   check = challenger.check(challenge, answer)
 
   if check
-    puts "Your answer was correct!!!"
+    puts "Your answer was correct!!!".white.bold.green_background
     game[:correct] = game[:correct] + 1
   else
-    puts "Your answer was wrong. Try again."
+    puts "Your answer was wrong. Try again.".white.bold.red_background
     game[:incorrect] = game[:incorrect] + 1
   end
 
